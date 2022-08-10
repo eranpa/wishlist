@@ -1,9 +1,32 @@
 
 <template>
-  <h2>hello dor and eran</h2>
+  <div>
+    <router-view></router-view>
+  </div>
 
 </template>
 
-<script >
+<script>
+import { RouterLink, RouterView } from 'vue-router'
 
+export default {
+  name: "main-app",
+  props: [],
+  components: {
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+  },
+
+  created() {
+    // this.$store.dispatch({ type: 'loadWishs' })
+  },
+
+};
 </script>
+
+<style>
+</style>

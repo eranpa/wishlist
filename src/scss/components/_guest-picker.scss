@@ -1,0 +1,234 @@
+.guest-dropdown {
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 4%), 0 8px 16px rgb(0 0 0 / 15%);
+  margin-top: 12px;
+  padding: 16px 32px;
+  right: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  max-height: calc(100vh - 200px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  .guest-section {
+    .guest-blank {
+      .guest-space {
+        padding: 0 6px;
+        width: 342px;
+        .guest-blank2 {
+          .guest-component {
+            box-pack: justify;
+            box-align: center;
+            color: rgb(34, 34, 34);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            padding-right: 4px;
+            .guest-info {
+              margin-right: 5px;
+              .guest-type {
+                font-family: circular;
+                font-size: 16px;
+                line-height: 20px;
+                padding-bottom: 6px;
+              }
+              .guest-conditions {
+                font-family: cereal;
+                font-size: 14px;
+                line-height: 18px;
+                // font-weight: 400;
+                color: rgb(113, 113, 113);
+              }
+            }
+            .guest-amount {
+              min-width: 104px;
+              margin-left: 5px;
+              .guest-calc {
+                box-pack: justify;
+                box-align: center;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 104px;
+                height: 32px;
+                color: rgb(34, 34, 34);
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+                .btn-amount {
+                  box-pack: center;
+                  box-align: center;
+                  box-flex: 0;
+                  width: 32px;
+                  height: 32px;
+                  flex-grow: 0;
+                  flex-shrink: 0;
+                  cursor: pointer;
+                  display: inline-flex;
+                  margin: 0px;
+                  padding: 0px;
+                  text-align: center;
+                  text-decoration: none;
+                  border-width: 1px;
+                  border-style: solid;
+                  border-color: rgb(176, 176, 176);
+                  color: rgb(113, 113, 113);
+                  font-family: inherit;
+                  outline: none;
+                  touch-action: manipulation;
+                  align-items: center;
+                  justify-content: center;
+                  background: rgb(255, 255, 255);
+                  border-radius: 50%;
+                  font-size: 100%;
+                  appearance: button;
+                  .btn-amount-icon {
+                    height: 22px;
+                    width: 22px;
+                    padding: 5px;
+                  }
+                  &.btn-disable {
+                    cursor: not-allowed;
+                    color: rgb(235, 235, 235);
+                    border-color: rgb(235, 235, 235);
+                    background: rgb(255, 255, 255);
+                  }
+                }
+                .guest-number {
+                  position: relative;
+                  color: inherit;
+                  font-family: cereal;
+                  font-size: inherit;
+                  line-height: inherit;
+                  span {
+                    color: inherit;
+                    font-family: inherit;
+                    font-size: inherit;
+                    line-height: inherit;
+                  }
+                }
+              }
+            }
+          }
+          .guest-component:not(:last-child) {
+            border-bottom: 1px solid rgb(235, 235, 235);
+          }
+          .guest-component:last-child {
+            .guest-info {
+              .guest-conditions {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // }
+}
+.guest-container-reserve {
+  // before of guest-container
+  width: 100%;
+  border-radius: 32px;
+
+  .guest-dropdown {
+    right: -42.5px;
+    top: 114%;
+  }
+}
+
+.guest-container {
+  // after
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  padding: 1px;
+  appearance: none;
+  overflow: visible;
+  user-select: auto;
+  outline: none;
+  display: block;
+  flex: 1 0 0%;
+  width: 0;
+  z-index: 1;
+  border-radius: 32px;
+  .guest-wraper {
+    // before
+    // padding: 14px 24px 14px 25px;
+    // after
+    padding: 14px 24px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 1;
+    border-radius: 32px;
+    .header {
+      // before
+      // font-size: 11.7px;
+      // font-family: Circular-bold;
+      // letter-spacing: 0.76px;
+      // width: 130px;
+      // after
+      padding-bottom: 2px;
+      font-size: 11.6px;
+      line-height: 16px;
+      // font-weight: var(--h-oqhch);
+      letter-spacing: 0.04em;
+    }
+
+    .text {
+      // before
+      font-size: 14px;
+      // letter-spacing: 0.2px;
+      font-family: cereal;
+      color: #717171;
+      // margin-top: 3px;
+      // after
+      font-size: 14px;
+      line-height: 18px;
+      color: #717171;
+      // font-weight: var(--e-y-j-d-v-j);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+  }
+}
+
+.guest-container.unselected-picker:hover {
+  background-color: #ebebeb;
+}
+
+.selected-guest {
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.guest-reserve {
+  border: 1px solid #b0b0b0;
+  border-radius: 0 0 0.55rem 0.55rem;
+  padding: 14px;
+  margin-bottom: 15px;
+
+  .input-guests-reserve {
+    border: none;
+    background-color: transparent;
+  }
+
+  .guest-reserve-label {
+    font-size: 11.8px;
+    font-family: Circular-bold;
+    letter-spacing: 0.65px;
+    width: 130px;
+  }
+}

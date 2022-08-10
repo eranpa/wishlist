@@ -1,0 +1,324 @@
+// @import "bourbon/bourbon";
+
+// Breakpoints
+$bp-maggie: 15em;
+$bp-lisa: 30em;
+$bp-bart: 48em;
+$bp-marge: 62em;
+$bp-homer: 75em;
+
+// Styles
+.container {
+
+  a {
+    color: rgba(38, 137, 13, 1);
+
+    &:hover,
+    &:focus {
+      color: rgba(4, 106, 56, 1);
+    }
+  }
+
+  .container {
+    margin: 5% 3%;
+
+    @media (min-width: $bp-bart) {
+      margin: 2%;
+    }
+
+    @media (min-width: $bp-homer) {
+      margin: 2em auto;
+      max-width: $bp-homer;
+    }
+  }
+
+  .responsive-table {
+    width: 100%;
+    margin-bottom: 1.5em;
+    border-spacing: 0;
+    font-family: cereal !important;
+
+    @media (min-width: $bp-bart) {
+      font-size: .9em;
+    }
+
+    @media (min-width: $bp-marge) {
+      font-size: 1em;
+    }
+
+    thead {
+      // Accessibly hide <thead> on narrow viewports
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);
+      /* IE6, IE7 */
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      font-family: cereal !important;
+
+      @media (min-width: $bp-bart) {
+        // Unhide <thead> on wide viewports
+        position: relative;
+        clip: auto;
+        height: auto;
+        width: auto;
+        overflow: auto;
+      }
+
+      th {
+        //   background-color: rgba(38,137,13,1);
+        background-color: transparent;
+        border: 1px solid rgba(211, 211, 211, 0.548);
+        //   font-weight: normal;
+        text-align: left;
+        color: black;
+
+        &:first-of-type {
+          text-align: left;
+        }
+      }
+    }
+
+
+    
+    @media (max-width: 550px) {
+      .action-container {
+        justify-content: space-between !important;
+      }
+    }
+    // Set these items to display: block for narrow viewports
+    tbody,
+    tr,
+    th,
+    td {
+      display: block;
+      padding: 0;
+      text-align: left;
+      white-space: normal;
+    }
+
+
+    tr {
+      @media (min-width: $bp-bart) {
+        // Undo display: block 
+        display: table-row;
+      }
+    }
+
+    th,
+    td {
+      padding: .5em;
+      vertical-align: middle;
+
+      @media (min-width: $bp-lisa) {
+        padding: .75em .5em;
+        
+      }
+
+      @media (min-width: $bp-bart) {
+        // Undo display: block 
+        display: table-cell;
+        padding: .5em;
+      }
+
+      @media (min-width: $bp-marge) {
+        padding: .75em .5em;
+      }
+
+      @media (min-width: $bp-homer) {
+        padding: .75em;
+        
+      }
+    }
+
+    caption {
+      margin-bottom: 1em;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: left;
+
+      @media (min-width: $bp-bart) {
+        font-size: 1.5em;
+   
+      }
+    }
+
+    tfoot {
+      font-size: .8em;
+      font-style: italic;
+
+      @media (min-width: $bp-marge) {
+        font-size: .9em;
+      }
+    }
+
+    tbody {
+      @media (min-width: $bp-bart) {
+        // Undo display: block 
+        display: table-row-group;
+      }
+
+      tr {
+        margin-bottom: 1em;
+
+        @media (min-width: $bp-bart) {
+          // Undo display: block 
+          display: table-row;
+          border-width: 1px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &:nth-of-type(even) {
+          @media (min-width: $bp-bart) {
+            background-color: rgba(0, 0, 0, .12);
+          }
+        }
+      }
+
+      th[scope="row"] {
+        background-color: transparent;
+        color: black;
+        // &:first-child{
+
+        //   box-shadow: inset 0 -1.2px 0 0 #ddd;
+        // }
+        
+
+        @media (min-width: $bp-lisa) {
+          border-left: 1px solid rgba(211, 211, 211, 0.548);
+          border-bottom: 1px solid rgba(211, 211, 211, 0.548);
+        }
+
+        @media (min-width: $bp-bart) {
+          background-color: transparent;
+          color: rgba(0, 0, 0.87);
+          text-align: left;
+        }
+      }
+
+      td {
+        text-align: left;
+
+        @media (min-width: $bp-bart) {
+          border-left: 1px solid rgba(211, 211, 211, 0.548);
+          border-bottom: 1px solid rgba(211, 211, 211, 0.548);
+          text-align: left;
+        }
+
+        &:last-of-type {
+          @media (min-width: $bp-bart) {
+            border-right: 1px solid rgba(211, 211, 211, 0.548);
+          }
+        }
+      }
+
+      td[data-type=currency] {
+        text-align: left;
+        // display:  block !important;
+      }
+
+      td[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: .8em;
+        color: black;
+        font-weight: bold;
+
+        @media (min-width: $bp-lisa) {
+          font-size: .9em;
+     
+
+        }
+
+        @media (min-width: $bp-bart) {
+          // Don’t show data-title labels 
+          content: none;
+          // font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .action-container {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    // height: 100% !important;
+    align-content: flex-end !important;
+    span{
+      cursor: pointer;
+    }
+    @media (min-width: $bp-maggie) {
+      .action-container {
+        display: inline !important;
+            }
+  }
+
+}
+
+
+.dashboard-data-area {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .data-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
+    min-width: 30%;
+    padding: 24px;
+    box-shadow: #0000001f 0 6px 16px;
+    border-radius: 15px;
+    
+    .revenue-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 163px;
+      width: 100%;
+
+      .revenue-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // .revenue-month{
+        //   height: 50px;
+        //   width: 70%;
+        // }
+        // .revenue-month{
+        //   height: 50px;
+        //   width: 30%;
+        // }
+
+      }
+
+    }
+
+
+    .card-txt {
+      text-align: left;
+      font-size: 22px;
+      // width: 100%;
+    }
+
+    .card-title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@include for-narrow-layout {
+  .dashboard-data-area{
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+}

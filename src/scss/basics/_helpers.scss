@@ -1,0 +1,97 @@
+// Flex
+.flex {
+  display: flex;
+}
+
+.grey-underline {
+  box-shadow: inset 0 -1.2px 0 0 #ddd;
+}
+
+.dot-separate {
+  margin: 8px 8px 0px;
+  font-size: 14px;
+  color: $clr2;
+}
+
+.column{
+  flex-direction: column;
+}
+.flex.inline-flex {
+  display: inline-flex;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+
+.space-evenly{
+  justify-content: space-evenly;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+//   flex: 1;
+
+// List
+.clean-list {
+  list-style-type: none;
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
+
+//  button
+.clean-button {
+  border: none;
+  background-color: transparent;
+}
+
+.border-thin-black-round {
+  border: 1px solid rgba(0 0 0 / 20%);
+  border-radius: 25px;
+}
+
+// Text
+// .vertical-text {
+//   writing-mode: tb-rl;
+//   transform: rotate(-180deg);
+// }
+
+// .tag-text {
+//   color: $clr1;
+//   text-transform: uppercase;
+//   @include type(boldCondensed);
+// }
+
+// Aspect ratios
+
+// .ratio-16-9 {
+//   @include aspect-ratio(100, 56);
+// }
+
+// .ratio-square {
+//   @include aspect-ratio(100, 100);
+// }
+
+// .ratio-card {
+//   @include aspect-ratio(100, 80);
+// }
+
+// .ratio-poster {
+//   @include aspect-ratio(100, 150);
+// }
