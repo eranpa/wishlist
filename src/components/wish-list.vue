@@ -1,11 +1,11 @@
 <template>
     <section class="wish-list" v-if="wishes">
 
-                <wish-preview v-for="wish in wishes" :key="wish._id" @removeWish="removeWish"
-                  :wish="wish">
-                </wish-preview>
-
+        <li v-for="wish in wishes" @click="selectWish(wish._id)"><wish-preview :key="wish._id" @removeWish="removeWish" :wish="wish">
+        </wish-preview></li>
       
+
+
     </section>
 </template>
 
@@ -29,6 +29,10 @@ export default {
     mounted() {
     },
     methods: {
+        selectWish(wishId) {
+            // console.log('hello')
+            this.$store.dispatch({ type: 'loadWish', id: wishId })
+        },
         removeWish(wishId) {
             this.$emit("removeWish", wishId)
         }

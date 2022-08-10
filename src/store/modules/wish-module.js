@@ -2,11 +2,15 @@ import { wishService } from '../../service/wishes.service'
 export default {
   state: {
     wishes: [],
+    displayedBook: null
   },
   getters: {
     wishesForDisplay(state) {
       return state.wishes
     },
+    getDisplayedBook(state) { 
+      return state.displayedBook
+    }
   },
   mutations: {
     setWishes(state, { wishes }) {
@@ -16,7 +20,11 @@ export default {
       const idx = state.wishes.findIndex((wish) => wish._id === id)
       state.wishes.splice(idx, 1)
     },
+    setWish (state, wish) { 
+      state.displayedBook = wish
+    }
   },
+  
   actions: {
     async loadWishes({ commit }) {
       try {
@@ -31,6 +39,14 @@ export default {
       try {
         await wishService.remove(id)
         commit({ type: 'removeWish', id })
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    async loadWish({ commit }, { id } = this.wishes[0]._id) {
+      try {
+        const wish = await wishService.getById(id) 
+        commit({ type: 'setWish', wish })
       } catch (err) {
         console.log(err)
       }
