@@ -1,10 +1,10 @@
 <template>
-    <tr>
-        <td>{{ wish.title }}</td>
-        <td>{{ wish.importance }}</td>
-        <td>{{ wish.description }}</td>
-        <td><button @click="removeWish(wish._id)">Delete wish</button></td>
-    </tr>
+    <div>
+        <div>{{ wish.title }}</div>
+        <div>{{ wish.rating }}</div>
+        <div>{{ wish.description }}</div>
+        <div><button @click="removeWish(wish._id)">Delete wish</button></div>
+    </div>
 </template>
 <!-- :wishStatus="wish.status" -->
 <script>

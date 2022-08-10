@@ -1,15 +1,16 @@
 // import { firebaseService } from './firebase.service'
-// const colName = 'wishs'
+import { storageService }  from './async-storage-service'
+const DB_KEY = 'wish_db'
+
 function query() {
-  // return firebaseService.query()
+  return storageService.query(DB_KEY)
 }
 
 function getById(wishId) {
-  // return firebaseService.getById(wishId, colName)
-}
+return storageService.get(DB_KEY, wishId)}
 
 function remove(wishId) {
-  // return firebaseService.remove(wishId, colName)
+ return storageService.remove(DB_KEY, wishId)
 }
 
 

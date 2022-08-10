@@ -1,7 +1,7 @@
 <template>
   <div>
     Eran and Dor
-  <!-- <wish-list :wishs="getWishs" @removeWish="removeWish" @updateWishField="updateWishField"></wish-list> -->
+  <wish-list :wishes="getWishes" @removeWish="removeWish"></wish-list>
   </div>
 </template>
 
@@ -23,9 +23,9 @@ export default {
     },
   },
   computed: {
-    // getWishs() {
-    //   return this.$store.getters.wishsForDisplay
-    // },
+    getWishes() {
+      return this.$store.getters.wishesForDisplay
+    },
   },
 };
 </script>

@@ -22,7 +22,7 @@ export default {
   },
 
   created() {
-    // this.$store.dispatch({ type: 'loadWishs' })
+    this.$store.dispatch({ type: 'loadWishes' }) 
   },
 
 };

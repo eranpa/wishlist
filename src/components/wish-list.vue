@@ -1,12 +1,11 @@
 <template>
-    <section class="wish-list" v-if="wishs">
-        <table>
-            <tbody>
-                <wish-preview v-for="wish in wishs" :key="wish._id" @removeWish="removeWish"
-                    @updateWishField="updateWishField" :wish="wish">
+    <section class="wish-list" v-if="wishes">
+
+                <wish-preview v-for="wish in wishes" :key="wish._id" @removeWish="removeWish"
+                  :wish="wish">
                 </wish-preview>
-            </tbody>
-        </table>
+
+      
     </section>
 </template>
 
@@ -16,7 +15,7 @@ import wishPreview from './wish-preview.vue'
 export default {
     name: 'wish-list',
     props: {
-        wishs: {
+        wishes: {
             type: Array,
             required: true
         },
